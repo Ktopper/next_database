@@ -1,0 +1,23 @@
+[
+  {
+    "id": "3",
+    "title": "Fervor Life",
+    "text": "The Mothership of all things Fervor Life.",
+    "image": "/images/home/square_700_wave_crash1.webp",
+    "url": "https://fervorlife.com/"
+  },
+  {
+    "id": "1",
+    "title": "Abc of AI",
+    "text": "An AI term Children's book for all ages.",
+    "image": "/images/children/chatbot_cat2.png",
+    "url": "/ai_abc"
+  },
+  {
+    "id": "2",
+    "title": "Aria: Book I",
+    "text": "a Space Adverture in the making.",
+    "image": "/images/aria/aria_card.webp",
+    "url": "/aria_book"
+  }
+]

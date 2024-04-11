@@ -1,0 +1,153 @@
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates three columns of equal width */
+    gap: 20px; /* Adjust the gap between cards */
+    margin: 20px; /* Optional: Adds some space around the grid */
+
+  }
+  .news-grid h2{
+    font-size: var(--font-size-lg);
+    font-weight: 800;
+    color: var(--text-color-dark);}
+  .news-card {
+    padding-inline:.5rem;
+    padding-block: 1.5rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the items horizontally */
+    text-align: center; /* Ensures text is centered */
+    border-radius: var(--border-radius);
+    border: 2px dashed var(--color-third);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  }
+  
+  .card-image {
+    width: 50%; /* Makes the image fill the card */
+    height: auto; /* Keeps the image aspect ratio */
+    margin-bottom: 10px; /* Space between image and title */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-tight);
+    border:1px solid var(--color-light);
+  }
+  .news-card a{
+    font-family: var(--font-nav-title);
+    font-size: var(--font-size-md);
+    background-color: var(--nav-bkg-color);
+    color: var(--nav-link-color);
+    box-shadow: var(--box-shadow-tight);
+    width:fit-content;
+    padding: 1rem;
+    transition: all 0.3s ease-in;
+    border-radius: var(--border-radius);
+    border: none;
+    border-radius: var(--border-radius);
+    border: 2px solid transparent;
+    transition: all 0.2s ease-in; 
+  }
+.news-card a:hover{
+  background-color: var(--nav-link-bkg-hover);
+  color: var(--nav-link-color-hover);
+  text-shadow: var(--text-shadow-glow);
+  border: 2px solid var(--color-fifth);
+  border-radius: var(--border-radius-round);
+  }
+  /* Small cards */
+  .small-card-grid {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .small-card-link {
+    text-decoration: none;
+    color: inherit; /* Ensures text color isn't affected by link styles */
+  }
+  
+  .small-card {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd; /* Example styling, adjust as needed */
+    padding: 10px;
+    padding-block: 20px;
+    border-radius: 4px;
+    transition: box-shadow 0.3s ease-in-out;
+    border-radius: var(--border-radius);
+    border: 2px solid transparent;
+    transition: all 0.2s ease-in; 
+  }
+  .small-card h3{
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    margin-block: .1rem;
+  }
+  .small-card p{
+    padding-block: 0px;
+    font-size: var(--font-size-s);
+    font-weight: 700;
+  }
+  
+  .small-card:hover {
+    background-color: var(--nav-link-bkg-hover);
+    color: var(--nav-link-color-hover);
+    text-shadow: var(--text-shadow-glow);
+    border: 2px dashed var(--color-fifth);
+    border-radius: 25px;
+  }
+  
+  .small-card-image {
+    width: 100px; /* Set image width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Space below the image */
+  }
+  
+  @media (max-width: 768px) {
+   
+  }
+  
+
+  /* For tablets and below */
+@media (max-width: 768px) {
+    .news-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+    }
+    .small-card-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 cards across on phones */
+    }
+  }
+  
+  /* For mobile phones */
+  @media (max-width: 480px) {
+    .news-grid {
+      grid-template-columns: 1fr; /* 1 column for small screens */
+      margin:auto
+    }
+    .news-grid h2{
+      font-size: var(--font-size-md);
+      line-height: 2.3rem;
+      font-weight: 600;
+    }
+    .small-card-grid {
+      grid-template-columns:  1fr; /* 2 cards across on phones */
+    }
+    .small-card-image {
+      width: 80%; /* Set image width */
+      height: auto; /* Maintain aspect ratio */
+      margin-bottom: 10px; /* Space below the image */
+    }
+    .small-card p{
+      padding-block: 0px;
+      font-size: var(--font-size-normal);
+      font-weight: 600;
+    }
+    .small-card{
+      width:90%;
+    }
+  }
+  

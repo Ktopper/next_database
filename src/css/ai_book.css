@@ -1,0 +1,112 @@
+/* ai_book.css */
+.book-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  border: 1px solid #ccc;
+  padding: var(--spacing-normal);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding-block: 2rem;
+  padding-inline: 2rem;
+  background-color: var(--block-bkg-color);
+  margin-bottom: var(--spacing-med);
+  color: var(--text-color-med);
+  align-items: center;
+}
+.text-book-card{
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 500px;
+  gap: 20px;
+  border: 1px solid #ccc;
+  padding: var(--spacing-normal);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding-block: 2rem;
+  padding-inline: 2rem;
+  background-color: var(--block-bkg-color);
+  margin-bottom: var(--spacing-med);
+  color: var(--text-color-med);
+  text-align: start;
+}
+
+.book-card img{
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+.text-book-card img{
+  margin: auto;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+
+.book-card .book-text {
+  font-size: var(--font-size-normal);
+}
+.book-text{
+  margin: auto;
+  text-align: start;
+}
+.book-text p{
+  text-indent: 0em;
+}
+.book-text h2{
+  text-align: center;
+}
+
+/* Use nth-child to alternate layouts */
+.book-card:nth-child(odd) {
+  grid-template-areas: "image text";
+}
+
+.book-card:nth-child(even) {
+  grid-template-areas: "text image";
+}
+
+.book-card img {
+  grid-area: image;
+}
+
+.book-card .book-text {
+  grid-area: text;
+}
+.text-book-text h3{
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+}
+.text-book-text p{
+  font-size: var(--font-size-normal);
+  line-height: 2.2em;
+}
+.text-book-text hr{
+  margin-top: 20px;
+  padding-block: 2rem;
+}
+@media only screen and (max-width: 900px) {
+  .book-card:nth-child(even), .book-card:nth-child(odd) {
+    grid-template-areas: "text" "image";
+  }
+  .book-card {
+    grid-template-columns: 1fr;
+  }
+  .text-book-card{
+    width: 98%;
+    padding-inline: .5rem;  
+    box-shadow: none;
+    border: none;
+    line-height: 2em;
+  }
+  .text-book-text{
+    width: 100%;
+  }
+  .text-book-text p{
+    font-size: var(--font-size-small);
+    line-height: 2.2em;
+  }
+
+}

@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Cuprum:wght@400;700&family=Finlandica:wght@600&family=Fuzzy+Bubbles:wght@400;700&family=Hammersmith+One&family=IBM+Plex+Mono:wght@400;700&family=Lato:ital,wght@0,400;0,700;1,700&family=Martian+Mono:wght@400;600&family=Murecho&family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;600&family=Red+Hat+Display:wght@400;600;700&family=Roboto+Mono:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Stick+No+Bills:wght@700&family=Twinkle+Star&family=Walter+Turncoat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+:root {
+  font-size: 2.5vh;
+  line-height: 1.6rem;
+  letter-spacing: 0.02rem;
+  text-align: center;
+  background-color: var(--color-light);
+  box-sizing: border-box;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  color: var(--text-color-light);
+  background-color: var(--color-dark-primary);
+
+  /*--color--*/
+  --text-color-dark: rgb(3, 2, 17);
+  --color-dark-primary-trans: rgba(8, 33, 58, 0.8);
+  --color-dark-primary: #040b11;
+  --color-light: #f5f5f5;
+  --color-primary: #122d50;
+  --color-second: rgba(57, 255, 159, 0.823);
+  --color-third: #4e9f3d;
+  --color-fourth: #ffdb58;
+  --color-fifth: #56c9e6;
+  --color-sixth:#0f0e0f;
+  --color-dark-gray: grey;
+
+  --nav-bkg-color: var(--color-primary);
+  --nav-link-color: var(--color-light);
+  --nav-link-bkg-hover: var(--color-dark-primary);
+  --nav-link-color-hover: var(--color-fourth);
+
+  --footer-bkg-color:var(--color-primary);
+  --hero-text-bk: var(--color-dark-primary-trans);
+  --card-color-light: var(--color-light);
+
+  /*--text-color--*/
+  --text-color-light: var(--color-light);
+  --text-color-dark: rgb(3, 2, 17);
+  --hero-text: var(--nav-link-color);
+
+  /*--font--*/
+--font-normal: "Merriweather", sans-serif;
+--font-nav:"Inter", sans-serif;
+--font-title: "Inter", sans-serif;
+
+  --font-text-normal: var(--font-normal);
+  --font-nav-normal: var(--font-nav);
+  --font-nav-title: var(--font-title);
+  --font-title-normal: var(--font-title);
+  /*---font-size---*/
+  --font-size-xs: 0.5rem;
+  --font-size-s: 0.7rem;
+  --font-size-normal: 1rem;
+  --font-size-md: 1.5rem;
+  --font-size-lg: 2rem;
+  --font-size-xl: 4rem;
+
+  /*--border--*/
+  --border-setting: 5px solid var(--color-borders);
+  --border-radius: 6px;
+  --border-radius-round: 50px;
+
+  /*--shadow--*/
+  --text-shadow: 2px 2px 8px rgba(72, 71, 71, 0.5);
+  --text-shadow-tight: 1px 1px 5px rgba(17, 17, 17, 0.6),
+    2px 2px 8px rgba(17, 17, 17, 0.2);
+  --text-shadow-glow: 2px 2px 30px var(--color-second),
+    -2px -2px 20px var(--color-dark-primary);
+
+  --box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3),
+    -2px -2px 10px rgba(0, 0, 0, 0.2);
+  --box-shadow-tight: 2px 2px 5px rgba(3, 20, 9, 0.2);
+
+  /*--spacing--*/
+  --spacing-gap: 8px;
+  --spacing-normal: 1.5rem;
+  --spacing-small: 0.5rem;
+  --spacing-medium: 2rem;
+  --spacing-large: 4rem;
+
+  font-family: "Cuprum", sans-serif;
+  font-family: "Finlandica", sans-serif;
+  font-family: "Fuzzy Bubbles", cursive;
+  font-family: "Hammersmith One", sans-serif;
+  font-family: "IBM Plex Mono", monospace;
+  font-family: "Lato", sans-serif;
+  font-family: "Martian Mono", monospace;
+  font-family: "Murecho", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-family: "Red Hat Display", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Mono", monospace;
+  font-family: "Stick No Bills", sans-serif;
+  font-family: "Twinkle Star", cursive;
+  font-family: "Walter Turncoat", cursive;
+  font-family: "Poppins", sans-serif;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-family: "Barlow", sans-serif;
+  font-family: "Inter", sans-serif;
+  font-family: "Merriweather", serif;
+  font-family: var(--font-normal);
+}
+body{
+  margin: 0px;
+}
+p {
+  text-indent: 1.2rem;
+}
+a {
+  color: bisque;
+  text-decoration: none;
+}
+h1 {
+  font-family: var(--font-title-normal);
+  font-weight: bold;
+  font-size: var(--font-size-xl);
+}
+h2 {
+  font-size: var(--font-size-lg);
+  line-height: 2.8rem;
+  font-weight: 800;
+  font-family: var(--font-title-normal);
+}
+h3 {
+  font-family: var(--font-nav-title);
+  font-size: var(--font-size-md);
+  display: inline;
+}
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+.h-inline {
+  display: inline;
+}
+@media only screen and (max-width: 700px) {
+  :root {
+    font-size: 2vh;
+    overflow-x: hidden;
+
+    /*---font-size---*/
+    --font-size-xs: 0.5rem;
+    --font-size-s: 0.7rem;
+    --font-size-normal: 1rem;
+    --font-size-md: 1.5rem;
+    --font-size-lg: 2rem;
+    --font-size-xl: 3rem;
+  }
+}

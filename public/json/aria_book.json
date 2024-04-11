@@ -1,0 +1,15 @@
+[
+    {
+      "id": "1",
+      "title": "Chapter 1: Wake Up",
+      "text": "/markdown/aria/chapter1.md",
+      "image": "/images/aria/chapter1.webp"
+    },
+    {
+        "id": "2",
+        "title": "Chapter 2: Direction",
+        "text": "/markdown/aria/chapter2.md",
+        "image": "/images/aria/chapter2.webp"
+      }
+
+]

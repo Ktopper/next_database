@@ -1,0 +1,159 @@
+[
+    {
+      "id": "1",
+      "title": "Algorithm",
+      "text": "/markdown/childrens_book/letter_a.md",
+      "image": "/images/children/algo_aligator3.webp"
+    },
+    {
+      "id": "2",
+      "title": "Backpropagation",
+      "text": "/markdown/childrens_book/letter_b.md",
+      "image": "/images/children/bayesian_bird1.png"
+    },
+    {
+      "id": "3",
+      "title": "Chatbot Cat",
+      "text": "/markdown/childrens_book/letter_c.md",
+      "image": "/images/children/chatbot_cat2.png"
+    },
+    {
+      "id": "4",
+      "title": "Deep Learning",
+      "text": "/markdown/childrens_book/letter_d.md",
+      "image": "/images/children/deep_dog3.png"
+    },
+    {
+      "id": "5",
+      "title": "Embedding",
+      "text": "/markdown/childrens_book/letter_e.md",
+      "image": "/images/children/encoding_elephant2.png"
+    },
+    {
+      "id": "6",
+      "title": "Feature Extraction",
+      "text": "/markdown/childrens_book/letter_f.md",
+      "image": "/images/children/fuzzy_fox3.png"
+    },
+    {
+      "id": "7",
+      "title": "Gradient Descent",
+      "text": "/markdown/childrens_book/letter_g.md",
+      "image": "/images/children/gradient_giraffe4.png"
+    },
+    {
+      "id": "8",
+      "title": "Heuristic",
+      "text": "/markdown/childrens_book/letter_h.md",
+      "image": "/images/children/hyper_hippo2.png"
+    },
+    {
+      "id": "9",
+      "title": "Inference",
+      "text": "/markdown/childrens_book/letter_i.md",
+      "image": "/images/children/inference_iguana2.png"
+    },
+    {
+      "id": "10",
+      "title": "Jacobian Matrix",
+      "text": "/markdown/childrens_book/letter_j.md",
+      "image": "/images/children/jacobian_jaguar2.png"
+    },
+    {
+      "id": "11",
+      "title": "K-nearest Neighbors",
+      "text": "/markdown/childrens_book/letter_k.md",
+      "image": "/images/children/kmean-koala2.png"
+    },
+    {
+      "id": "12",
+      "title": "Learning Rate",
+      "text": "/markdown/childrens_book/letter_l.md",
+      "image": "/images/children/loss_lemur.png"
+    },
+    {
+      "id": "13",
+      "title": "Machine Learning",
+      "text": "/markdown/childrens_book/letter_m.md",
+      "image": "/images/children/markov_monkey2.png"
+    },
+    {
+      "id": "14",
+      "title": "Neural Network",
+      "text": "/markdown/childrens_book/letter_n.md",
+      "image": "/images/children/nueron_newt2.png"
+    },
+    {
+      "id": "15",
+      "title": "Optimization",
+      "text": "/markdown/childrens_book/letter_o.md",
+      "image": "/images/children/overfitting_owl2.png"
+    },
+    {
+      "id": "16",
+      "title": "Perceptron",
+      "text": "/markdown/childrens_book/letter_p.md",
+      "image": "/images/children/p_perceptron1.png"
+    },
+    {
+      "id": "17",
+      "title": "Quantization",
+      "text": "/markdown/childrens_book/letter_q.md",
+      "image": "/images/children/q-learner-quail2.png"
+    },
+    {
+      "id": "18",
+      "title": "Reinforcement Learning",
+      "text": "/markdown/childrens_book/letter_r.md",
+      "image": "/images/children/recurrent_raccoon3.png"
+    },
+    {
+      "id": "19",
+      "title": "Supervised Learning",
+      "text": "/markdown/childrens_book/letter_s.md",
+      "image": "/images/children/sigmoid_squirrel1.png"
+    },
+    {
+      "id": "20",
+      "title": "Transfer Learning",
+      "text": "/markdown/childrens_book/letter_t.md",
+      "image": "/images/children/transformer_tucan1.png"
+    },
+    {
+      "id": "21",
+      "title": "Unsupervised Learning",
+      "text": "/markdown/childrens_book/letter_u.md",
+      "image": "/images/children/unsupervised_unicorn1.png"
+    },
+    {
+      "id": "22",
+      "title": "Variational Autoencoder",
+      "text": "/markdown/childrens_book/letter_v.md",
+      "image": "/images/children/vector_viper1.png"
+    },
+    {
+      "id": "23",
+      "title": "Weight Initialization",
+      "text": "/markdown/childrens_book/letter_w.md",
+      "image": "/images/children/weighted_wolf1.png"
+    },
+    {
+      "id": "24",
+      "title": "XOR Problem",
+      "text": "/markdown/childrens_book/letter_x.md",
+      "image": "/images/children/xavier_xenops1.png"
+    },
+    {
+      "id": "25",
+      "title": "Yann LeCun",
+      "text": "/markdown/childrens_book/letter_y.md",
+      "image": "/images/children/yolo_yak1.png"
+    },
+    {
+      "id": "26",
+      "title": "Zero-shot Learning",
+      "text": "/markdown/childrens_book/letter_z.md",
+      "image": "/images/children/zero-zebra1.png"
+    }
+  ]
+  
