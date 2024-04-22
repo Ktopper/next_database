@@ -1,31 +1,37 @@
-'use client'
-import { useRef } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
+"use client";
+import React, { useRef } from "react";
+import Navbar from "@/components/Navbar.jsx";
+
+import Hero from "@/components/Hero.jsx";
+import HeaderBlock from "@/components/HeaderBlock.jsx";
+
+import "@/css/ai_book.css";
+import "@/css/markdown.css";
 import OnboardingForm from "@/components/OnboardingForm";
 
-function OnboardingPage() {
-  const heroRef = useRef(); // This will be used to reference the Hero component
+
+
+const AriaBook = () => {
+  const heroRef = useRef();
 
   return (
-    <div className="container">
+    <div className="container black-bk">
       <Navbar heroRef={heroRef} delay={true} />
-      <Hero
-        title="Welcome to Fervor Books"
-        statement="Where Writing meets AI adventures"
-        image="/images/home/field_blue_gold.png"
-      />
-      <div className='content-area'>
-      <div>
-      <h1>Welcome to the Client Onboarding Form</h1>
-      <OnboardingForm />
-  </div>
-      </div>
-      <Footer />
 
+      <Hero
+        className="black-bk"
+        title="Aria Book 1"
+        statement="An Adventure in AI storytelling!"
+        image="/images/aria/aria_title3.png"
+      />
+
+      <div className="content-area">
+        <HeaderBlock className="black-bk" title="Aria: The Unknowing" text="" />
+<OnboardingForm />
+
+      </div>
     </div>
   );
-}
+};
 
-export default OnboardingPage;
+export default AriaBook;
