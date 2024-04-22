@@ -1,7 +1,7 @@
 
-import "../css/globals.css";
-import "../css/style.css";
-import "../css/design_system.css"
+import "@/css/globals.css";
+import "@/css/style.css";
+import "@/css/design_system.css"
 import "@/css/navbar.css";
 import "@/css/footer.css";
 import "@/css/hero.css";

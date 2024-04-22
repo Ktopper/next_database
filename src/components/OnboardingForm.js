@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { db } from '@/util/firebase-config'; // Ensure this import reflects the correct location and export
+import { collection, addDoc } from 'firebase/firestore';
 
 function OnboardingForm() {
     const [formData, setFormData] = useState({
@@ -20,19 +22,11 @@ function OnboardingForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('/api/submit-form', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-
-            if (!response.ok) {
-                throw new Error('Something went wrong');
-            }
-
+            // Directly using Firestore here to add the form data
+            const docRef = await addDoc(collection(db, "clientResponses"), formData);
+            console.log("Document written with ID: ", docRef.id);
             alert('Form submitted successfully');
+            // Resetting form data after successful submission
             setFormData({
                 name: '',
                 email: '',
@@ -41,6 +35,7 @@ function OnboardingForm() {
                 satisfaction: ''
             });
         } catch (error) {
+            console.error("Error adding document: ", error);
             alert('Failed to submit the form');
         }
     };
