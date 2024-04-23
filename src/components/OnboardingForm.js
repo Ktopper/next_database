@@ -22,10 +22,10 @@ function OnboardingForm() {
     }));
   };
 
-  // Initialize Firebase
   useEffect(() => {
     const initializeFirebase = async () => {
       const { initializeApp } = await import('firebase/app');
+      const { getFirestore } = await import('firebase/firestore');
       const { getAnalytics } = await import('firebase/analytics');
 
       const firebaseConfig = {
@@ -39,45 +39,45 @@ function OnboardingForm() {
       };
 
       const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
       const analytics = getAnalytics(app);
+
+      // Move the handleSubmit function inside the useEffect hook
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+          const docRef = await addDoc(collection(db, 'clientResponses'), formData);
+          console.log('Document written with ID: ', docRef.id);
+          alert('Form submitted successfully');
+          setFormData({
+            name: '',
+            email: '',
+            age: '',
+            favoriteColor: '',
+            satisfaction: '',
+          });
+        } catch (error) {
+          console.error('Error adding document: ', error);
+          alert('Failed to submit the form');
+        }
+      };
+
+      // Attach the event listener to the form submission
+      const form = document.querySelector('form');
+      form.addEventListener('submit', handleSubmit);
+
+      // Clean up the event listener when the component unmounts
+      return () => {
+        form.removeEventListener('submit', handleSubmit);
+      };
     };
 
     initializeFirebase();
   }, []);
 
-  // Handle form submission
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const { getFirestore } = await import('firebase/firestore');
-      const db = getFirestore();
-
-      const docRef = await addDoc(collection(db, 'clientResponses'), {
-        name: formData.name,
-        email: formData.email,
-        age: formData.age,
-        favoriteColor: formData.favoriteColor,
-        satisfaction: formData.satisfaction,
-      });
-      console.log('Document written with ID: ', docRef.id);
-      alert('Form submitted successfully');
-      setFormData({
-        name: '',
-        email: '',
-        age: '',
-        favoriteColor: '',
-        satisfaction: '',
-      });
-    } catch (error) {
-      console.error('Error adding document: ', error);
-      alert('Failed to submit the form');
-    }
-  };
-
-
   return (
     <form>
-    <label htmlFor="name">Name:</label>
+      <label htmlFor="name">Name:</label>
       <input
         type="text"
         id="name"
