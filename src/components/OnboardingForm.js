@@ -37,11 +37,12 @@ function OnboardingForm() {
         appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
         measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
       };
-      
+
       const app = initializeApp(firebaseConfig);
       const db = getFirestore(app);
       const analytics = getAnalytics(app);
 
+      // Move the handleSubmit function inside the useEffect hook
       const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -73,6 +74,7 @@ function OnboardingForm() {
 
     initializeFirebase();
   }, []);
+
   return (
     <form>
       <label htmlFor="name">Name:</label>
@@ -115,9 +117,7 @@ function OnboardingForm() {
         required
       />
 
-      <label htmlFor="satisfaction">
-        Satisfaction with our services (1-5):
-      </label>
+      <label htmlFor="satisfaction">Satisfaction with our services (1-5):</label>
       <input
         type="number"
         id="satisfaction"
