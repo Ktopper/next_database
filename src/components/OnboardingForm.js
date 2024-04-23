@@ -1,69 +1,113 @@
-'use client';
-import { useState } from 'react';
-import db  from '@/util/firebase-config'; // Ensure this import reflects the correct location and export
+import { useState, useEffect } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
+import db from '@/util/firebase-config';
 
 function OnboardingForm() {
-    // State to hold form data
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        age: '',
-        favoriteColor: '',
-        satisfaction: ''
-    });
+  // State to hold form data
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    age: '',
+    favoriteColor: '',
+    satisfaction: '',
+  });
 
-    // Handle changes in form inputs
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
-    };
+  // Handle changes in form inputs
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
 
-    // Handle form submission
+  useEffect(() => {
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            // Adding document to Firestore
-            const docRef = await addDoc(collection(db, "clientResponses"), formData);
-            console.log("Document written with ID: ", docRef.id);
-            alert('Form submitted successfully');
-            // Resetting form data after successful submission
-            setFormData({
-                name: '',
-                email: '',
-                age: '',
-                favoriteColor: '',
-                satisfaction: ''
-            });
-        } catch (error) {
-            console.error("Error adding document: ", error);
-            alert('Failed to submit the form');
-        }
+      e.preventDefault();
+      try {
+        const docRef = await addDoc(collection(db, 'clientResponses'), formData);
+        console.log('Document written with ID: ', docRef.id);
+        alert('Form submitted successfully');
+        setFormData({
+          name: '',
+          email: '',
+          age: '',
+          favoriteColor: '',
+          satisfaction: '',
+        });
+      } catch (error) {
+        console.error('Error adding document: ', error);
+        alert('Failed to submit the form');
+      }
     };
 
-    return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="name">Name:</label>
-            <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
+    // Attach the event listener to the form submission
+    const form = document.querySelector('form');
+    form.addEventListener('submit', handleSubmit);
 
-            <label htmlFor="email">Email:</label>
-            <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
+    // Clean up the event listener when the component unmounts
+    return () => {
+      form.removeEventListener('submit', handleSubmit);
+    };
+  }, []);
 
-            <label htmlFor="age">Age:</label>
-            <input type="text" id="age" name="age" value={formData.age} onChange={handleChange} required />
+  return (
+    <form>
+      <label htmlFor="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        value={formData.name}
+        onChange={handleChange}
+        required
+      />
 
-            <label htmlFor="favoriteColor">Favorite Color:</label>
-            <input type="text" id="favoriteColor" name="favoriteColor" value={formData.favoriteColor} onChange={handleChange} required />
+      <label htmlFor="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
+        required
+      />
 
-            <label htmlFor="satisfaction">Satisfaction with our services (1-5):</label>
-            <input type="number" id="satisfaction" name="satisfaction" value={formData.satisfaction} onChange={handleChange} required />
+      <label htmlFor="age">Age:</label>
+      <input
+        type="text"
+        id="age"
+        name="age"
+        value={formData.age}
+        onChange={handleChange}
+        required
+      />
 
-            <button type="submit">Submit</button>
-        </form>
-    );
+      <label htmlFor="favoriteColor">Favorite Color:</label>
+      <input
+        type="text"
+        id="favoriteColor"
+        name="favoriteColor"
+        value={formData.favoriteColor}
+        onChange={handleChange}
+        required
+      />
+
+      <label htmlFor="satisfaction">
+        Satisfaction with our services (1-5):
+      </label>
+      <input
+        type="number"
+        id="satisfaction"
+        name="satisfaction"
+        value={formData.satisfaction}
+        onChange={handleChange}
+        required
+      />
+
+      <button type="submit">Submit</button>
+    </form>
+  );
 }
 
 export default OnboardingForm;
