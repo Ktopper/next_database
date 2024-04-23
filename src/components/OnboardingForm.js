@@ -1,6 +1,7 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
-import db from '@/util/firebase-config';
 
 function OnboardingForm() {
   // State to hold form data
@@ -22,35 +23,56 @@ function OnboardingForm() {
   };
 
   useEffect(() => {
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      try {
-        const docRef = await addDoc(collection(db, 'clientResponses'), formData);
-        console.log('Document written with ID: ', docRef.id);
-        alert('Form submitted successfully');
-        setFormData({
-          name: '',
-          email: '',
-          age: '',
-          favoriteColor: '',
-          satisfaction: '',
-        });
-      } catch (error) {
-        console.error('Error adding document: ', error);
-        alert('Failed to submit the form');
-      }
+    const initializeFirebase = async () => {
+      const { initializeApp } = await import('firebase/app');
+      const { getFirestore } = await import('firebase/firestore');
+      const { getAnalytics } = await import('firebase/analytics');
+
+      const firebaseConfig = {
+        apiKey: 'YOUR_API_KEY',
+        authDomain: 'YOUR_PROJECT_ID.firebaseapp.com',
+        projectId: 'YOUR_PROJECT_ID',
+        storageBucket: 'YOUR_PROJECT_ID.appspot.com',
+        messagingSenderId: 'YOUR_SENDER_ID',
+        appId: 'YOUR_APP_ID',
+        measurementId: 'G-4X1ZQVVJ6X',
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      const analytics = getAnalytics(app);
+
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+          const docRef = await addDoc(collection(db, 'clientResponses'), formData);
+          console.log('Document written with ID: ', docRef.id);
+          alert('Form submitted successfully');
+          setFormData({
+            name: '',
+            email: '',
+            age: '',
+            favoriteColor: '',
+            satisfaction: '',
+          });
+        } catch (error) {
+          console.error('Error adding document: ', error);
+          alert('Failed to submit the form');
+        }
+      };
+
+      // Attach the event listener to the form submission
+      const form = document.querySelector('form');
+      form.addEventListener('submit', handleSubmit);
+
+      // Clean up the event listener when the component unmounts
+      return () => {
+        form.removeEventListener('submit', handleSubmit);
+      };
     };
 
-    // Attach the event listener to the form submission
-    const form = document.querySelector('form');
-    form.addEventListener('submit', handleSubmit);
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      form.removeEventListener('submit', handleSubmit);
-    };
+    initializeFirebase();
   }, []);
-
   return (
     <form>
       <label htmlFor="name">Name:</label>
