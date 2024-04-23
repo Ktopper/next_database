@@ -7,6 +7,7 @@ import HeaderBlock from "@/components/HeaderBlock.jsx";
 
 import "@/css/ai_book.css";
 import "@/css/markdown.css";
+import OnboardingForm from "@/components/OnboardingForm";
 
 
 
@@ -28,7 +29,7 @@ const OnboardingPage = () => {
       <div className="content-area">
         <HeaderBlock className="black-bk" title="Aria: The Unknowing" text="" />
 
-
+<OnboardingForm />
       </div>
     </div>
   );
