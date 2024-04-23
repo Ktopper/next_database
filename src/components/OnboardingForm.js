@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { db } from '@/util/firebase-config'; // Ensure this import reflects the correct location and export
+import db  from '@/util/firebase-config'; // Ensure this import reflects the correct location and export
 import { collection, addDoc } from 'firebase/firestore';
 
 function OnboardingForm() {

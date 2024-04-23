@@ -1,6 +1,5 @@
 "use client";
-import React, { useRef } from "react";
-import Navbar from "@/components/Navbar.jsx";
+
 import Hero from "@/components/Hero.jsx";
 import HeaderBlock from "@/components/HeaderBlock.jsx";
 import "@/css/ai_book.css";
@@ -10,11 +9,11 @@ import OnboardingForm from "@/components/OnboardingForm";
 
 
 const OnboardingPage = () => {
-  const heroRef = useRef();
+
 
   return (
     <div className="container black-bk">
-      <Navbar heroRef={heroRef} delay={true} />
+   
 
       <Hero
         className="black-bk"
