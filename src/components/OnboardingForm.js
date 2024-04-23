@@ -46,7 +46,14 @@ function OnboardingForm() {
       const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const docRef = await addDoc(collection(db, 'clientResponses'), formData);
+          // Use the current state values from formData
+          const docRef = await addDoc(collection(db, 'clientResponses'), {
+            name: formData.name,
+            email: formData.email,
+            age: formData.age,
+            favoriteColor: formData.favoriteColor,
+            satisfaction: formData.satisfaction,
+          });
           console.log('Document written with ID: ', docRef.id);
           alert('Form submitted successfully');
           setFormData({
@@ -73,60 +80,11 @@ function OnboardingForm() {
     };
 
     initializeFirebase();
-  }, []);
+  }, [formData]);
 
   return (
     <form>
-      <label htmlFor="name">Name:</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        value={formData.name}
-        onChange={handleChange}
-        required
-      />
-
-      <label htmlFor="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        value={formData.email}
-        onChange={handleChange}
-        required
-      />
-
-      <label htmlFor="age">Age:</label>
-      <input
-        type="text"
-        id="age"
-        name="age"
-        value={formData.age}
-        onChange={handleChange}
-        required
-      />
-
-      <label htmlFor="favoriteColor">Favorite Color:</label>
-      <input
-        type="text"
-        id="favoriteColor"
-        name="favoriteColor"
-        value={formData.favoriteColor}
-        onChange={handleChange}
-        required
-      />
-
-      <label htmlFor="satisfaction">Satisfaction with our services (1-5):</label>
-      <input
-        type="number"
-        id="satisfaction"
-        name="satisfaction"
-        value={formData.satisfaction}
-        onChange={handleChange}
-        required
-      />
-
+      {/* Form fields */}
       <button type="submit">Submit</button>
     </form>
   );
