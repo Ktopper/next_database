@@ -99,6 +99,7 @@ function Navbar({ heroRef, delay = false }) {
             <ul className="nav-links">
               <li><Link href="/aria_book"> Aria Novel </Link></li>
               <li><Link href="/ai_abc"> AI ABCs </Link></li>
+              <li><Link href="/onboarding">Onboarding</Link></li>
             </ul>
           )}
         </div>
@@ -106,6 +107,7 @@ function Navbar({ heroRef, delay = false }) {
         <ul className="nav-links">
         <li><Link href="/aria_book"> Aria Novel </Link></li>
         <li><Link href="/ai_abc">AI ABCs </Link></li>
+        <li><Link href="/onboarding">Onboarding</Link></li>
 
         </ul>
       )}
