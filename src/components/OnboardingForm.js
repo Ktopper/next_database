@@ -84,7 +84,56 @@ function OnboardingForm() {
 
   return (
     <form>
-      {/* Form fields */}
+    <label htmlFor="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        value={formData.name}
+        onChange={handleChange}
+        required
+      />
+
+      <label htmlFor="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
+        required
+      />
+
+      <label htmlFor="age">Age:</label>
+      <input
+        type="text"
+        id="age"
+        name="age"
+        value={formData.age}
+        onChange={handleChange}
+        required
+      />
+
+      <label htmlFor="favoriteColor">Favorite Color:</label>
+      <input
+        type="text"
+        id="favoriteColor"
+        name="favoriteColor"
+        value={formData.favoriteColor}
+        onChange={handleChange}
+        required
+      />
+
+      <label htmlFor="satisfaction">Satisfaction with our services (1-5):</label>
+      <input
+        type="number"
+        id="satisfaction"
+        name="satisfaction"
+        value={formData.satisfaction}
+        onChange={handleChange}
+        required
+      />
+
       <button type="submit">Submit</button>
     </form>
   );
